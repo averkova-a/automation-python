@@ -33,3 +33,9 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         price_in_cart = self.browser.find_element(*ProductPageLocators.PRICE_IN_CART).text
         assert product_price == price_in_cart, "Wrong price in cart"
+
+    def should_not_be_succes_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.PRODUCT_IN_CART), "Сообщение о добавлении в корзину есть"
+
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.PRODUCT_IN_CART)
