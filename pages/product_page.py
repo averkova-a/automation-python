@@ -22,12 +22,10 @@ class ProductPage(BasePage):
         except NoAlertPresentException:
             print("No second alert presented")
 
-
     def should_be_right_product_name(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         name_in_cart = self.browser.find_element(*ProductPageLocators.PRODUCT_IN_CART).text
         assert product_name == name_in_cart, "Wrong product name in cart"
-
 
     def should_be_right_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
