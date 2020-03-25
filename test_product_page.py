@@ -6,7 +6,7 @@ import pytest
 
 
 @pytest.mark.need_review
-def test_guest_can_add_product_to_basket(browser, link):
+def test_guest_can_add_product_to_basket(browser):
     url = "http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/"
     page = ProductPage(browser, url)
     page.open()
